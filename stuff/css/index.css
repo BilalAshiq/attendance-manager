@@ -14,7 +14,6 @@ body {
 
 .alert {
 	margin-top: 10px;
-	font-size: 1rem;
 }
 
 .date {
@@ -67,6 +66,7 @@ span {
 @media only screen and (max-width: 768px){
 	.alert {
 		width: 95%;
+		font-size: 1rem;
 	}
 	.alert2 {
 		font-size: 1rem;
@@ -74,7 +74,7 @@ span {
 	}
 	.for {
 		width: 50%;
-		margin-bottom: 30px;
+		margin-bottom: 5px;
 	}
 
 }
