@@ -11,6 +11,9 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+.logo {
+	height: 3rem;
+}
 
 .alert {
 	margin-top: 10px;
@@ -45,14 +48,23 @@ body {
 }
 
 .btn-container {
-	width: 100%;
+	width: 30%;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin: 0px auto;
 }
 
+.btn-container a {
+	width: 100%;
+	margin-top: 2rem;
+}
+.btn {
+	width: 100%;
+
+}
 .alert2 {
 	margin: 10px auto;
 	font-size: 1.2rem;
@@ -62,8 +74,13 @@ body {
 span {
 	color: red;
 }
-
+.nav-link i {
+	visibility: hidden;
+}
 @media only screen and (max-width: 768px){
+	.btn-container {
+		width: 90%;
+	}
 	.alert {
 		width: 95%;
 		font-size: 1.2rem;
@@ -76,5 +93,9 @@ span {
 		width: 50%;
 		margin-top: 20px;
 	}
-
+	.nav-item{
+		display: flex;
+	}
+	.nav-link i {
+		visibility: visible;	}
 }
