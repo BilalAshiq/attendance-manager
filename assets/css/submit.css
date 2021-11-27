@@ -1,0 +1,46 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background: #232931;
+	display: flex;
+	flex-direction: column;
+}
+
+.alert {
+	margin-top: 10px;
+}
+
+fieldset {
+	margin-top: 10px;
+}
+
+label {
+	color: white;
+}
+
+.form-control {
+	text-transform: capitalize;
+}
+
+.btn {
+	margin: 10px auto;
+	width: 100%;
+}
+
+.main-container {
+	display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+	.main-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+}
