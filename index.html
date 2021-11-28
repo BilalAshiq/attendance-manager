@@ -43,25 +43,47 @@
 
 	<!-- Buttons -->
 	<div class="btn-container">
-		<a href="submitAttendance.html">
-			<button class="btn btn-success">
-				Submit Attendance
-			</button></a>
-		<a href="#">
-			<button class="btn btn-primary">
-				Admin
-			</button>
-		</a>
-		<a href="#">
-			<button class="btn btn-warning">
-				About
-			</button>
-		</a>
+		<button class="btn btn-success mb-4" id="user-login-btn">
+			Submit Attendance
+		</button>
+		<button class="btn btn-primary mb-4">
+			Admin
+		</button>
+		<button class="btn btn-warning">
+			About
+		</button>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="user-login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+	      </div>
+	      <div class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
 	<script src="assets/js/date.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/de41999cf3.js"></script>
+	<script>
+		$(document).ready(()=>{
+			// Display user login modal
+			$("#user-login-btn").click(()=>{
+				$("#user-login-modal").modal('show');
+			});
 
+		}); // main
+	</script>
 </body>
 </html>
