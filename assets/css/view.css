@@ -1,0 +1,40 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background: #232931;
+	display: flex;
+	flex-direction: column;
+}
+
+.logo {
+	height: 3rem;
+}
+
+.alert {
+	margin-top: 10px;
+}
+
+.btn-container {
+	width: 30%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	align-items: center;
+	margin: 0px auto;
+}
+
+.btn-container a {
+	width: 100%;
+	margin-top: 2rem;
+}
+.btn {
+	width: 100%;
+
+}
