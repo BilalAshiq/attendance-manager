@@ -22,7 +22,7 @@ body {
 }
 
 .btn-container {
-	width: 50%;
+	width: 30%;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
