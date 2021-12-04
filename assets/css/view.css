@@ -22,12 +22,12 @@ body {
 }
 
 .btn-container {
-	width: 30%;
+	width: 50%;
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+        margin : 1.5rem auto;
 }
 
 .btn-container a {
