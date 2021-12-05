@@ -6,54 +6,67 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/submit.css">
+	<link rel="icon" type="x-type/image" href="assets/imgs/favicon.png">
 </head>
-<body>
+<body id="body">
 
 	<!-- Submit Form -->
-	<div class="main-container">
+	<div class="main-container d-flex justify-content-center mt-5">
 		<div class="col-12 col-lg-4 col-md-4 col-sm-12">
 			<h2 class="alert alert-info text-center container">Submit</h2>
-		<fieldset>
-				<label>Class</label>
-				<select class="form-control">
-					<option>Select</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-				</select>
-			</fieldset>
+			<form class="form">
+				<fieldset>
+					<label>Class</label>
+					<select class="form-control">
+						<option>Select</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</fieldset>
 
-			<fieldset>
-				<label>Teacher</label>
-				<input type="" name="" class="form-control">
-			</fieldset>
+				<fieldset>
+					<label>Teacher</label>
+					<input type="" name="" class="form-control">
+				</fieldset>
 
-			<fieldset>
-				<label>Total Strength</label>
-				<input type="number" name="" class="form-control">
-			</fieldset>
+				<fieldset>
+					<label>Total Strength</label>
+					<input type="number" name="" class="form-control">
+				</fieldset>
 
-			<fieldset>
-				<label>Present</label>
-				<input type="number" name="" class="form-control">
-			</fieldset>
+				<fieldset>
+					<label>Present</label>
+					<input type="number" name="" class="form-control">
+				</fieldset>
 
-			<fieldset>
-				<label>Absent</label>
-				<input type="number" name="" class="form-control">
-			</fieldset>
-				<button class="btn btn-success"><i class="fas fa-plus"></i> Save</button>
+				<fieldset>
+					<label>Absent</label>
+					<input type="number" name="" class="form-control">
+				</fieldset>
+
+				<fieldset>
+					<button class="btn btn-success"><i class="fas fa-plus"></i> Save</button>
+				</fieldset>
+			</form>
 		</div>
 		
-
 	 <script src="https://kit.fontawesome.com/de41999cf3.js"></script>
-
-</body>
+	</body>
 </html>
+
+
+ <script>
+ 	let status = sessionStorage.getItem('loginStatus');
+ 	if (status == 'false') {
+ 		document.getElementById('body').style.display = 'none';
+ 	}
+</script>
+
