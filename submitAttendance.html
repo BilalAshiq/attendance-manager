@@ -13,8 +13,12 @@
 	<!-- Submit Form -->
 	<div class="main-container d-flex justify-content-center mt-5">
 		<div class="col-12 col-lg-4 col-md-4 col-sm-12">
-			<h2 class="alert alert-info text-center container">Submit</h2>
+			<h2 class="alert alert-info text-center container"><i class="fas fa-user"></i> Submit</h2>
 			<form class="form">
+				<fieldset>
+					<label>Teacher</label>
+					<input disabled class="form-control">
+				</fieldset>
 				<fieldset>
 					<label>Class</label>
 					<select class="form-control">
@@ -31,10 +35,15 @@
 						<option>10</option>
 					</select>
 				</fieldset>
-
 				<fieldset>
-					<label>Teacher</label>
-					<input type="" name="" class="form-control">
+					<label>Section</label>
+					<select class="form-control">
+						<option>Select</option>
+						<option>Sunflower</option>
+						<option>Lily</option>
+						<option>Daffoldil</option>
+						<option>Bluebell</option>
+					</select>
 				</fieldset>
 
 				<fieldset>
@@ -48,25 +57,26 @@
 				</fieldset>
 
 				<fieldset>
-					<label>Absent</label>
-					<input type="number" name="" class="form-control">
-				</fieldset>
-
-				<fieldset>
 					<button class="btn btn-success"><i class="fas fa-plus"></i> Save</button>
 				</fieldset>
 			</form>
 		</div>
 		
 	 <script src="https://kit.fontawesome.com/de41999cf3.js"></script>
+	 <script src="assets/js/jquery.min.js"></script>
+
+
+	<script>
+	 	let status = sessionStorage.getItem('loginStatus');
+	 	if (status == "" || status == 'false' || status == null) {
+	 		document.getElementById('body').remove();
+	 		alert("Login First!");
+	 		window.location = "index.html";
+	 	}
+	 	let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+	 	$("#username").val(userInfo.name);
+	</script>
 	</body>
 </html>
 
-
- <script>
- 	let status = sessionStorage.getItem('loginStatus');
- 	if (status == 'false') {
- 		document.getElementById('body').style.display = 'none';
- 	}
-</script>
 
