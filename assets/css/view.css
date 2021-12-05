@@ -58,8 +58,34 @@ body {
 	margin: 1rem auto;
 }
 
+fieldset {
+	width: 40%;
+	margin: 20px auto;
+}
+
+select {
+	background: #1e1f26;
+}
+
+label {
+	color: white;
+	font-family: calibri;
+	font-size: 1.3rem;
+}
+
+#form {
+	display: none;
+}
+
+#form2 {
+	display: none;
+}	
+
 @media only screen and (max-width: 768px){
 	.btn-container {
 		width: 100%;
+	}
+	fieldset {
+		width: 70%;
 	}
 }
