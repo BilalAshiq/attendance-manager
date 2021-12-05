@@ -31,6 +31,17 @@ body {
 	/*border-bottom: 2px solid crimson;*/
 }
 
+.btns {
+        position: relative;
+        right: 20%;
+        float: right;
+        margin: 20px;
+        color: black;
+        width: 10%;
+        border-radius: 5px;
+        padding: 5px;
+}
+
 .atte{
 	background: crimson;
 	padding: 5px;
@@ -88,7 +99,11 @@ label {
 	fieldset {
 		width: 70%;
 	}
-  .btn {
-    width: 80%;
-  }
+        .btn {
+                width: 80%;
+        }
+        .btns {
+                position: relative;
+                right: 10%;
+}
 }
