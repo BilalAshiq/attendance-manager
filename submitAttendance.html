@@ -21,7 +21,7 @@
 				</fieldset>
 				<fieldset>
 					<label>Class</label>
-					<select class="form-control">
+					<select class="form-control" id="class">
 						<option>Select</option>
 						<option>1</option>
 						<option>2</option>
@@ -37,7 +37,7 @@
 				</fieldset>
 				<fieldset>
 					<label>Section</label>
-					<select class="form-control">
+					<select class="form-control" id="section">
 						<option>Select</option>
 						<option>Sunflower</option>
 						<option>Lily</option>
@@ -48,16 +48,16 @@
 
 				<fieldset>
 					<label>Total Strength</label>
-					<input type="number" name="" class="form-control">
+					<input type="number" name="" class="form-control" id="total">
 				</fieldset>
 
 				<fieldset>
 					<label>Absent</label>
-					<input type="number" name="" class="form-control">
+					<input type="number" name="" class="form-control" id="absent">
 				</fieldset>
 
 				<fieldset>
-					<button class="btn btn-success"><i class="fas fa-plus"></i> Save</button>
+					<button class="btn btn-success" id="saveBtn"><i class="fas fa-plus"></i> Save</button>
 				</fieldset>
 			</form>
 		</div>
@@ -67,6 +67,8 @@
 
 
 	<script>
+		const submitURL = "http://localhost/attendance-manager-api/submitAttendance.php";
+
 	 	let status = sessionStorage.getItem('loginStatus');
 	 	if (status == "" || status == 'false' || status == null) {
 	 		document.getElementById('body').remove();
@@ -76,6 +78,43 @@
 	 	let username = JSON.parse(sessionStorage.getItem("userInfo")).name;
 	 	$("#teacher").val(username);
 	 	$("#teacher").prop("disabled", "true");
+
+	 	// Send data via post request
+		$('#saveBtn').click((e)=>{
+			e.preventDefault();
+			let teacher = $('#teacher').val();
+			let className = $('#class').val();
+			let section = $('#section').val();
+			let total = $('#total').val();
+			let absent = $('#absent').val();
+
+			let rawData = { teacher:teacher, class:className, section:section, roll:total, absent:absent };
+			let data = JSON.stringify(rawData);
+
+			$.ajax({
+				url: submitURL,
+				method: 'POST',
+				data: data,
+				dataType: 'json',
+				success: function (data) {
+					if (data.status == true) {
+						$(".form")[0].reset();
+						sessionStorage.setItem('loginStatus', '');
+						sessionStorage.setItem('userInfo', '');
+						alert(data.msg);
+						window.location = "index.html";
+					}
+					else {
+						alert(data.msg);
+					}
+				},
+				error: function () {
+					console.log('error');
+				}
+			})
+		});	 	
+
+
 	</script>
 	</body>
 </html>
