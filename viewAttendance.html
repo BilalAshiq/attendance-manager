@@ -29,6 +29,21 @@
 			            	<i class="fas fa-home"></i> Home
 			        	</a>
 			        </li>
+			        <li class="nav-item" onclick="showTab('searchByDate')">
+			            <a class="nav-link" href="#">
+			            	<i class="fas fa-calendar"></i> Search By Date
+			        	</a>
+			        </li>
+			        <li class="nav-item" onclick="showTab('searchByClass')">
+			            <a class="nav-link" href="#">
+			            	<i class="fas fa-pen"></i> Fetch By Class
+			        	</a>
+			        </li>
+			        <li class="nav-item" onclick="showTab('customSearch')">
+			            <a class="nav-link" href="#">
+			            	<i class="fas fa-database"></i> Custom By Search
+			        	</a>
+			        </li>
 			        <li class="nav-item">
 			            <a class="nav-link" href="#">
 			            	<i class="fas fa-info-circle"></i> About
@@ -41,94 +56,122 @@
 
 	<!-- Container -->
 
-		<div class="main-container">
-			<h2 class="head">View <span class="atte"> Attendance</span></h2>
+		<!-- div class="main-container">
 
-	<!-- Buttons -->
 			<div class="btn-container">
 				<button class="btn btn-success" id="btn">View By Date</button>
 				<button class="btn btn-primary" id="btn2">View Full Attendance</button>
 			</div>
-		</div>
+		</div> -->
 	  <!-- View by date form -->
-		<div id="form">
-			<fieldset>
-				<label>Class</label>
-				<select class="form-control">
-					<option>Select</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-				</select>
-			</fieldset>
-			<fieldset>
-				<label>Date</label>
-				<input type="date" name="" class="form-control">
-			</fieldset>
-                           <button class="btns btn-warning">View</button>
-			<table class="table table-bordered text-white container">
-				<thead class="table-dark">
-					<th>Total</th>
-					<th>Present</th>
-					<th>Absent</th>
-					<th>Date</th>
-				</thead>
-				<tbody id="table-body"></tbody>
-			</table>
-		</div>
-
-	<!-- Viw by full attendance form -->
-		<div id="form2">
-			<fieldset>
-				<label>Class</label>
-					<select class="form-control">
-					<option>Select</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-				</select>
-			</fieldset>
-                          <button class="btns btn-warning">View</button>
+	  <style>
+	  	body {
+	  	}
+	  	.row {
+	  		width: 100%;
+	  		margin: 0px auto;
+	  	}
+	  </style>
+		<main class="row container d-flex justify-content-center">
+		<div class="col-12 col-xs-12 col-sm-12 col-md-8 col-lg-9">
+			<div id="searchByDate" class="tab" style="display: block">
+				<h2 class="">Search By Date</h2>
+				<fieldset>
+					<label>Date</label>
+					<input type="date" name="" class="form-control">
+				</fieldset>
+	            <button class="btn btn-warning"><i class="fas fa-search"></i> View</button>
 				<table class="table table-bordered text-white container">
 					<thead class="table-dark">
-						<th>Date</th>
 						<th>Total</th>
 						<th>Present</th>
 						<th>Absent</th>
+						<th>Date</th>
 					</thead>
 					<tbody id="table-body"></tbody>
 				</table>
+			</div>
+
+		<!-- Viw by full attendance form -->
+			<div id="searchByClass" class="tab">
+				<h2 class="">Search By Class</h2>
+				<fieldset>
+					<label>Class</label>
+						<select class="form-control">
+						<option>Select</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</fieldset>
+	                <button class="btn btn-warning"><i class="fas fa-search"></i> View</button>
+					<table class="table table-bordered text-white container">
+						<thead class="table-dark">
+							<th>Date</th>
+							<th>Total</th>
+							<th>Present</th>
+							<th>Absent</th>
+						</thead>
+						<tbody id="table-body"></tbody>
+					</table>
+			</div>
+
+			<!-- View by date form -->
+			<div id="customSearch" class="tab">
+				<h2 class="">Custom Search</h2>
+				<fieldset> 
+					<label>Class</label>
+					<select class="form-control">
+						<option>Select</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label>Date</label>
+					<input type="date" name="" class="form-control">
+				</fieldset>
+	            <button class="btn btn-warning"><i class="fas fa-search"></i> View</button>
+				<table class="table table-bordered text-white container">
+					<thead class="table-dark">
+						<th>Total</th>
+						<th>Present</th>
+						<th>Absent</th>
+						<th>Date</th>
+					</thead>
+					<tbody id="table-body"></tbody>
+				</table>
+			</div>
 		</div>
-        <script src="assets/js/jquery.min.js"></script>
+    	</main>
+    <script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/de41999cf3.js"></script>
-		<script>
-		
-		$(document).ready(()=>{
+	<script>
 
-			$('#btn').click(()=>{
-				$('#form').slideToggle();
-			});
+	function hideAllTabs() {
+		$('.tab').hide();
+	}
 
-			$('#btn2').click(()=>{
-				$('#form2').slideToggle();
-			});
-
-		});
+	function showTab(tab) {
+		hideAllTabs();
+		$("#"+tab).show();
+	}
 	</script>
 
 </body>

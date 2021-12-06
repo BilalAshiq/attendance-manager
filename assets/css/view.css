@@ -31,16 +31,6 @@ body {
 	/*border-bottom: 2px solid crimson;*/
 }
 
-.btns {
-        position: relative;
-        right: 20%;
-        float: right;
-        margin: 20px;
-        color: black;
-        width: 20%;
-        border-radius: 5px;
-        padding: 5px;
-}
 
 .atte{
 	background: crimson;
@@ -64,16 +54,16 @@ body {
 	margin: 10px;
 }
 
-.btn {
+/*.btn {
 	width: 60%;
 	margin: 1rem auto;
-}
+}*/
 
-fieldset {
+/*fieldset {
 	width: 40%;
 	margin: 20px auto;
 }
-
+*/
 select {
 	background: #1e1f26;
 }
@@ -106,4 +96,21 @@ label {
                 position: relative;
                 right: 10%;
 }
+}
+
+.tab {
+	border: 1px solid #f1f1f1;
+	padding: 1rem;
+	margin: 3rem auto;
+	display: none;
+}
+
+.tab h2 {
+	color: #fff;
+	border-bottom: 2px solid grey;
+}
+
+.tab .btn {
+	margin: 20px 0px;
+	float: right;
 }

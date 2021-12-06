@@ -75,6 +75,7 @@
 	 	}
 	 	let username = JSON.parse(sessionStorage.getItem("userInfo")).name;
 	 	$("#teacher").val(username);
+	 	$("#teacher").prop("disabled", "true");
 	</script>
 	</body>
 </html>
