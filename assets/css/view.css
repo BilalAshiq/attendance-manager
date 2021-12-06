@@ -83,7 +83,7 @@ label {
 }	
 
 @media only screen and (max-width: 768px){
-	.btn-container {
+	/*.btn-container {
 		width: 100%;
 	}
 	fieldset {
@@ -94,7 +94,7 @@ label {
         }
         .btns {
                 position: relative;
-                right: 10%;
+                right: 10%;*/
 }
 }
 
