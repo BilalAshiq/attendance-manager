@@ -82,22 +82,6 @@ label {
 	display: none;
 }	
 
-@media only screen and (max-width: 768px){
-	.btn-container {
-		width: 100%;
-	}
-	fieldset {
-		width: 70%;
-	}
-        .btn {
-                width: 80%;
-        }
-        .btns {
-                position: relative;
-                right: 10%;
-}
-}
-
 .tab {
 	border: 1px solid #f1f1f1;
 	padding: 1rem;
@@ -113,4 +97,8 @@ label {
 .tab .btn {
 	margin: 20px 0px;
 	float: right;
+}
+
+@media only screen and (max-width: 768px){
+	
 }
