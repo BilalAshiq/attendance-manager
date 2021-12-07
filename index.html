@@ -104,13 +104,13 @@
 				let data = JSON.stringify(rawData);
 
 				$.ajax({
-					url: "http://localhost/attendance-manager-api/userLogin.php",
+					url: "https://alphacoders.ga/projects/attendance-manager-api/userLogin.php",
 					method: "POST",
 					data: data,
 					dataType: "json",
 					success: function (res) {
 						console.log(res);
-						if (res.status === true) {
+						if (res.status == true) {
 							window.location = "submitAttendance.html";
 							sessionStorage.setItem('loginStatus', 'true');
 							sessionStorage.setItem("userInfo", JSON.stringify(res.userInfo));
