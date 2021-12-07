@@ -113,7 +113,7 @@
 					dataType: "json",
 					success: function (res) {
 						console.log(res);
-						if (res.status === true) {
+						if (res.status == true) {
 							window.location = "submitAttendance.html";
 							sessionStorage.setItem('loginStatus', 'true');
 							sessionStorage.setItem("userInfo", JSON.stringify(res.userInfo));
