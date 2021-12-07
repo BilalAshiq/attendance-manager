@@ -72,7 +72,8 @@ span {
 	font-size: 1.5rem;
 	font-family: comic sans MS;
 	margin-top: 1.5rem;
-	border-bottom: 2px solid aqua;
+        text-decoration: underline;
+        text-decoration-color: #4ecca3;
 	cursor: pointer;
 }
 @media only screen and (max-width: 768px){
