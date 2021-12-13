@@ -52,13 +52,43 @@
 						<label class="labelHead">Password</label>
 						<input type="password" class="form-control" placeholder="Password">
 					</fieldset>
-					<button class="btn btn-success"> <i class="fas fa-plus-circle"></i> Create</button>
+					<button class="btn btn-success" id="create-account-btn"> <i class="fas fa-plus-circle"></i> Create</button>
 			</form>
 		</main>
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/de41999cf3.js"></script>
+	<script>
+
+		$('#create-account-btn').click(()=>{
+			let userName = $('#userName').val();
+			let email = $('#email').val();
+			let pw = $('password').val();
+
+			let rawData = { name:userName, email:email, password:pw };
+			let data = JSON.stringify(rawData);
+
+			$.ajax({
+				url: "https://alphacoders.ga/projects/attendance-manager-api/addUser.php",
+				method: "POST",
+				data: data,
+				dataType: "json",
+					success: function (data) {
+						console.log(data);
+					if (data.status == true) {
+						alert('Account Succesfully Created');
+					}
+					else {
+						alert('error');
+					}
+				},
+					error:function () {
+						console.log('error in creating account');
+					}
+			})
+		 });
+	</script>
 
 </body>
 </html>
