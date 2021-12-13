@@ -42,15 +42,15 @@
 				<h2 class="head">Create Account</h2>
 					<fieldset>
 						<label class="labelHead">UserName</label>
-						<input type="text" class="form-control" placeholder="UserName">
+						<input type="text" class="form-control" placeholder="UserName" id="userName">
 					</fieldset>
 					<fieldset>
 						<label class="labelHead">Email</label>
-						<input type="email" class="form-control" placeholder="Email">
+						<input type="email" class="form-control" placeholder="Email" id="email">
 					</fieldset>
 					<fieldset>
 						<label class="labelHead">Password</label>
-						<input type="password" class="form-control" placeholder="Password">
+						<input type="password" class="form-control" placeholder="Password" id="pw">
 					</fieldset>
 					<button class="btn btn-success" id="create-account-btn"> <i class="fas fa-plus-circle"></i> Create</button>
 			</form>
@@ -64,7 +64,7 @@
 		$('#create-account-btn').click(()=>{
 			let userName = $('#userName').val();
 			let email = $('#email').val();
-			let pw = $('password').val();
+			let pw = $('pw').val();
 
 			let rawData = { name:userName, email:email, password:pw };
 			let data = JSON.stringify(rawData);
