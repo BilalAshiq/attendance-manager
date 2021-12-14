@@ -60,6 +60,9 @@
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/de41999cf3.js"></script>
 	<script>
+           $("#create-account-btn").click( (e)=> {
+                 e.preventDefault();
+             });
 
 		$('#create-account-btn').click(()=>{
 			let userName = $('#userName').val();
@@ -77,6 +80,7 @@
 					success: function (data) {
 						console.log(data);
 					if (data.status == true) {
+                                                $("#form")[0].reset();
 						alert('Account Succesfully Created');
 					}
 					else {
