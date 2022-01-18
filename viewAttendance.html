@@ -78,9 +78,9 @@
 				<h2 class="">Search By Date</h2>
 				<fieldset>
 					<label>Date</label>
-					<input type="date" name="" class="form-control">
+					<input type="date" id="date" class="form-control">
 				</fieldset>
-	            <button class="btn btn-warning"><i class="fas fa-search"></i> View</button>
+	            <button class="btn btn-warning" id="viewByDateBtn"><i class="fas fa-search"></i> View</button>
 				<table class="table table-bordered text-white container">
 					<thead class="table-dark">
 						<th>Total</th>
@@ -172,6 +172,37 @@
 		hideAllTabs();
 		$("#"+tab).show();
 	}
+		
+		//FetchSubmissionsByDate 
+			$(document).ready(()=> {
+				$('#viewByDateBtn').click(() => {
+					let date = $('#date').val();
+
+					let rawData = { date:date };
+					let data = JSON.stringify(rawData);
+
+					$.ajax({
+						url: 'https://alphacoders.ga/projects/attendance-manager-api/fetchSubmissionsByDate.php',
+						method: 'POST',
+						data: data,
+						dataType: "json",
+						success: function(res) {
+								console.log(res);
+							if (res.status == true) {
+								sessionStorage.setItem('loginStatus', 'true');
+							sessionStorage.setItem("userInfo", JSON.stringify(res.userInfo));
+						}
+							else {
+								alert(res.msg);
+							window.location = "index.html";
+							sessionStorage.setItem('loginStatus', 'false');
+							}
+						}
+
+					})
+				})
+			});
+
 	</script>
 
 </body>
