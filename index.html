@@ -169,6 +169,38 @@
 
 
 		}); // main
+		// Admin login
+			$(document).ready(()=> {
+				$('#admin-login').click(() => {
+					let username = $('#username').val();
+					let password = $('#password').val();
+
+					let rawData = { username:"admin", password:"admin" };
+					let data = JSON.stringify(rawData);
+
+					$.ajax({
+						url: 'https://alphacoders.ga/projects/attendance-manager-api/adminLogin.php',
+						method: 'POST',
+						data: data,
+						dataType: "json",
+						success: function(res) {
+								console.log(res);
+							if (res.status == true) {
+								window.location = "viewAttendance.html";
+								sessionStorage.setItem('loginStatus', 'true');
+							sessionStorage.setItem("userInfo", JSON.stringify(res.userInfo));
+						}
+							else {
+								alert(res.msg);
+							window.location = "index.html";
+							sessionStorage.setItem('loginStatus', 'false');
+							}
+						}
+
+					})
+				})
+			});
+
 	</script>
 </body>
 </html>
