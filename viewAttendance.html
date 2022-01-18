@@ -188,9 +188,6 @@
 						dataType: "json",
 						success: function(res) {
 								console.log(res);
-							if (res.status == true) {
-								sessionStorage.setItem('loginStatus', 'true');
-							sessionStorage.setItem("userInfo", JSON.stringify(res.userInfo));
 						}
 							else {
 								alert(res.msg);
