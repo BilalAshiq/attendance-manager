@@ -97,11 +97,11 @@
 	      <div class="modal-body">
 	       	<fieldset>
 	       		<label>UserName</label>
-	       		<input type="text" id="email" class="form-control">
+	       		<input type="text" id="admin-username" class="form-control">
 	       	</fieldset>
 	       	<fieldset>
 	       		<label>Password</label>
-	       		<input type="password" id="password" class="form-control">
+	       		<input type="password" id="admin-password" class="form-control">
 	       	</fieldset>
 
 	      </div>
@@ -171,12 +171,17 @@
 		}); // main
 		// Admin login
 			$(document).ready(()=> {
-				$('#admin-login').click(() => {
-					let username = $('#username').val();
-					let password = $('#password').val();
+				$('#admin-login').click((e) => {
 
-					let rawData = { username:"admin", password:"admin" };
+					e.preventDefault();
+
+					let username = $('#admin-username').val();
+					let password = $('#admin-password').val();
+
+					let rawData = {username:username, password:password};
 					let data = JSON.stringify(rawData);
+
+					// console.log(data);
 
 					$.ajax({
 						url: 'https://alphacoders.ga/projects/attendance-manager-api/adminLogin.php',
@@ -197,7 +202,7 @@
 							}
 						}
 
-					})
+					});
 				})
 			});
 
